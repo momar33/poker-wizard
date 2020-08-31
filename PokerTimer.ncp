@@ -1,0 +1,172 @@
+<Project>
+  <Name>PokerTimer</Name>
+  <ProjectItem type="NClass.DiagramEditor.ClassDiagram.Diagram" assembly="NClass.DiagramEditor, Version=2.4.1823.0, Culture=neutral, PublicKeyToken=null">
+    <Name>Old</Name>
+    <Language>CSharp</Language>
+    <Entities>
+      <Entity type="Class">
+        <Name>GameData</Name>
+        <Access>Public</Access>
+        <Location left="1389" top="10" />
+        <Size width="251" height="230" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">private List&lt;SingleGamePlayerData&gt; playerData</Member>
+        <Member type="Property">public DateTime Date { get; }</Member>
+        <Member type="Property">public int NumPlayers { get; }</Member>
+        <Member type="Property">public int GamesRebuys { get; }</Member>
+        <Member type="Property">public string GamesLocation { get; }</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>SingleGamePlayerData</Name>
+        <Access>Public</Access>
+        <Location left="1725" top="10" />
+        <Size width="567" height="277" />
+        <Collapsed>False</Collapsed>
+        <Member type="Property">public string PlayersName { get; }</Member>
+        <Member type="Property">public int PlayersPlace { get; }</Member>
+        <Member type="Property">public int PlayersRebuys { get; }</Member>
+        <Member type="Property">public int PlayersBounties { get; }</Member>
+        <Member type="Property">public int AmountSpent { get; }</Member>
+        <Member type="Property">public int AmountWon { get; }</Member>
+        <Member type="Property">public int AmountNetted { get; }</Member>
+        <Member type="Property">public int PlayersPoints { get; }</Member>
+        <Member type="Property">public int GameLocation { get; }</Member>
+        <Member type="Constructor">public SingleGamePlayerData(string playerName, int placeFinished, int numberOfRebuys, int numberOfBounties)</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>frmStatistics</Name>
+        <Access>Public</Access>
+        <Location left="1022" top="10" />
+        <Size width="294" height="212" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">List&lt;GameData&gt; allGameData</Member>
+        <Member type="Field">List&lt;string&gt; allNames</Member>
+        <Member type="Field">string[] groupHeaders</Member>
+        <Member type="Field">string[] individualHeaders</Member>
+        <Member type="Method">private void frmStatistics_Load()</Member>
+        <Member type="Method">private void LoadAllGameData()</Member>
+        <Member type="Property">public int PokerDataDirectory { get; set; }</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>SinglePlayerData</Name>
+        <Access>Public</Access>
+        <Location left="1033" top="289" />
+        <Size width="567" height="459" />
+        <Collapsed>False</Collapsed>
+        <Member type="Property">public string Name { get; set; }</Member>
+        <Member type="Property">public List&lt;SingleGamePlayerData&gt; PlayersGameData { get; private set; }</Member>
+        <Member type="Constructor">public SinglePlayerData(List&lt;SingleGamePlayerData&gt; gameData)</Member>
+        <Member type="Method">public TotalPlayerData GetTotalPlayerData(CustomParameters parameters)</Member>
+        <Member type="Method">public List&lt;SingleGamePlayerData&gt; GetGames(CustomParameters parameters)</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>TotalPlayerData</Name>
+        <Access>Public</Access>
+        <Location left="1769" top="312" />
+        <Size width="567" height="459" />
+        <Collapsed>False</Collapsed>
+        <Member type="Property">public int TotalSpent { get; private set; }</Member>
+        <Member type="Property">public double TotalWon { get; private set; }</Member>
+        <Member type="Property">public double TotalNet { get; private set; }</Member>
+        <Member type="Property">public double TotalPoints { get; private set; }</Member>
+        <Member type="Property">public double AverageSpent { get; private set; }</Member>
+        <Member type="Property">public double AverageWon { get; private set; }</Member>
+        <Member type="Property">public double AverageNet { get; private set; }</Member>
+        <Member type="Property">public double AveragePoints { get; private set; }</Member>
+        <Member type="Property">public double AveragePlace { get; private set; }</Member>
+        <Member type="Property">public int GamesPlayed { get; private set; }</Member>
+        <Member type="Property">public int TotalRebuys { get; private set; }</Member>
+        <Member type="Property">public int TotalBounties { get; private set; }</Member>
+        <Member type="Property">public double PercentBeaten { get; private set; }</Member>
+        <Member type="Property">public double AverageRebuys { get; private set; }</Member>
+        <Member type="Constructor">public TotalPlayerData(List&lt;SingleGamePlayerData&gt; gameData)</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+    </Entities>
+    <Relationships>
+      <Relationship type="Association" first="0" second="1">
+        <StartOrientation>Horizontal</StartOrientation>
+        <EndOrientation>Horizontal</EndOrientation>
+        <BendPoint relativeToStartShape="True">
+          <X>1670</X>
+          <Y>108</Y>
+        </BendPoint>
+        <Direction>Unidirectional</Direction>
+        <AssociationType>Aggregation</AssociationType>
+      </Relationship>
+      <Relationship type="Association" first="2" second="0">
+        <StartOrientation>Horizontal</StartOrientation>
+        <EndOrientation>Horizontal</EndOrientation>
+        <BendPoint relativeToStartShape="True">
+          <X>1350</X>
+          <Y>107</Y>
+        </BendPoint>
+        <BendPoint relativeToStartShape="False">
+          <X>1364</X>
+          <Y>107</Y>
+        </BendPoint>
+        <Direction>Unidirectional</Direction>
+        <AssociationType>Aggregation</AssociationType>
+      </Relationship>
+      <Relationship type="Association" first="2" second="3">
+        <StartOrientation>Vertical</StartOrientation>
+        <EndOrientation>Vertical</EndOrientation>
+        <Direction>Unidirectional</Direction>
+        <AssociationType>Aggregation</AssociationType>
+      </Relationship>
+      <Relationship type="Association" first="3" second="1">
+        <StartOrientation>Horizontal</StartOrientation>
+        <EndOrientation>Vertical</EndOrientation>
+        <BendPoint relativeToStartShape="False">
+          <X>1744</X>
+          <Y>462</Y>
+        </BendPoint>
+        <Direction>Unidirectional</Direction>
+        <AssociationType>Aggregation</AssociationType>
+      </Relationship>
+      <Relationship type="Association" first="3" second="4">
+        <StartOrientation>Horizontal</StartOrientation>
+        <EndOrientation>Horizontal</EndOrientation>
+        <Direction>Unidirectional</Direction>
+        <AssociationType>Aggregation</AssociationType>
+      </Relationship>
+    </Relationships>
+  </ProjectItem>
+  <ProjectItem type="NClass.DiagramEditor.ClassDiagram.Diagram" assembly="NClass.DiagramEditor, Version=2.4.1823.0, Culture=neutral, PublicKeyToken=null">
+    <Name>New</Name>
+    <Language>CSharp</Language>
+    <Entities>
+      <Entity type="Class">
+        <Name>Player</Name>
+        <Access>Public</Access>
+        <Location left="730" top="286" />
+        <Size width="448" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">private List &lt;GameData&gt; games</Member>
+        <Member type="Method">public List&lt;GameData&gt; StatsByDateRange(DateTime startDate, DateTime endDate)</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Structure">
+        <Name>GameData</Name>
+        <Access>Public</Access>
+        <Location left="1475" top="126" />
+        <Size width="185" height="230" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">DateTime date</Member>
+        <Member type="Field">int place</Member>
+        <Member type="Field">int rebuys</Member>
+        <Member type="Field">string location</Member>
+        <Member type="Field">float amountWon</Member>
+        <Member type="Field">float amountSpent</Member>
+        <Member type="Field">int bounties</Member>
+        <Member type="Field">float amountNetted</Member>
+        <Member type="Field">float points</Member>
+      </Entity>
+    </Entities>
+    <Relationships />
+  </ProjectItem>
+</Project>
